@@ -17,7 +17,7 @@ provider "aws" {
   region = var.account_region
 
   assume_role {
-    role_arn     = "arn:aws:iam::${var.management_account_id}:role/sra-execution"
+    role_arn     = "arn:aws-us-gov:iam::${var.management_account_id}:role/sra-execution"
     session_name = "Pipeline_Run"
   }
 
@@ -33,7 +33,7 @@ provider "aws" {
   region = var.account_region
 
   assume_role {
-    role_arn     = "arn:aws:iam::${var.account_id}:role/sra-execution"
+    role_arn     = "arn:aws-us-gov:iam::${var.account_id}:role/sra-execution"
     session_name = "Pipeline_Run"
   }
   default_tags {
@@ -48,7 +48,7 @@ provider "aws" {
   region = var.account_region
 
   assume_role {
-    role_arn     = "arn:aws:iam::${var.log_archive_account_id}:role/sra-execution"
+    role_arn     = "arn:aws-us-gov:iam::${var.log_archive_account_id}:role/sra-execution"
     session_name = "Pipeline_Run"
   }
   default_tags {

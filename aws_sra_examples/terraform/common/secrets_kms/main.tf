@@ -54,7 +54,7 @@ data "aws_iam_policy_document" "sra_secrets_key_policy" {
     condition {
       test     = "StringLike"
       variable = "kms:EncryptionContext:SecretARN"
-      values   = ["arn:aws:secretsmanager:${data.aws_region.current.name}:*:secret:${var.sra_secrets_prefix}/*"]
+      values   = ["arn:${data.aws_partition.current.partition}:secretsmanager:${data.aws_region.current.name}:*:secret:${var.sra_secrets_prefix}/*"]
     }
     condition {
       test     = "StringLike"

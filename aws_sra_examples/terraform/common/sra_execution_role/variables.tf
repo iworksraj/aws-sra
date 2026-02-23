@@ -15,7 +15,7 @@ variable "management_account_id" {
 
 variable "aws_partition" {
   description = "AWS Partition (e.g., aws or aws-cn)"
-  default     = "aws"
+  default     = "aws-us-gov"
 }
 
 variable "execution_role_name" {

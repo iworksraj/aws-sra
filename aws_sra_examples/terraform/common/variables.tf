@@ -15,18 +15,18 @@ variable "governed_regions" {
 variable "security_account_id" {
   description = "Security Tooling Account ID"
   type        = string
-  default     = "111111111111"
+  default     = "569999101908"
 }
 
 variable "log_archive_account_id" {
   description = "Log Archive Account ID"
   type        = string
-  default     = "222222222222"
+  default     = "569996829251"
 }
 
 variable "aws_partition" {
   description = "AWS Partition (e.g., aws or aws-cn)"
-  default     = "aws"
+  default     = "aws-us-gov"
 }
 
 variable "execution_role_name" {

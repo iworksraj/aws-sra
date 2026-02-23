@@ -65,7 +65,7 @@ data "aws_iam_policy_document" "iam_policy" {
   statement {
     actions = ["iam:CreateServiceLinkedRole"]
     resources = [
-      "arn:${data.aws_partition.current.partition}:iam::${data.aws_caller_identity.current.account_id}:role/aws-service-role/inspector2.amazonaws.com/AWSServiceRoleForAmazonInspector2",
+      "arn:${data.aws_partition.current.partition}:iam::*:role/aws-service-role/inspector2.amazonaws.com/AWSServiceRoleForAmazonInspector2",
     ]
 
     condition {

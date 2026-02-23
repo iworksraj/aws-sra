@@ -130,7 +130,7 @@ data "aws_iam_policy_document" "cloudwatch_policy" {
       "logs:PutLogEvents"
     ]
     resources = [
-      "arn:aws:logs:${local.region}:${local.account_id}:log-group:/aws/lambda/${var.management_account_parameters_lambda_function_name}:log-stream:*"
+      "arn:${data.aws_partition.current.partition}:logs:${local.region}:${local.account_id}:log-group:/aws/lambda/${var.management_account_parameters_lambda_function_name}:log-stream:*"
     ]
   }
 }
@@ -178,7 +178,7 @@ data "aws_iam_policy_document" "management_account_parameters_lambda_ssm_policy"
       "ssm:GetParameters"
     ]
     resources = [
-      "arn:aws:ssm:*:${local.account_id}:parameter/sra/*"
+      "arn:${data.aws_partition.current.partition}:ssm:*:${local.account_id}:parameter/sra/*"
     ]
   }
   statement {
@@ -190,7 +190,7 @@ data "aws_iam_policy_document" "management_account_parameters_lambda_ssm_policy"
       "ssm:PutParameter"
     ]
     resources = [
-      "arn:aws:ssm:*:${local.account_id}:parameter/sra/*"
+      "arn:${data.aws_partition.current.partition}:ssm:*:${local.account_id}:parameter/sra/*"
     ]
   }
   statement {
